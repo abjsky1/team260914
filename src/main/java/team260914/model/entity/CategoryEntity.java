@@ -20,7 +20,7 @@ import lombok.ToString;
 @Entity 
 @Table(name = "category")
 @NoArgsConstructor @AllArgsConstructor @Builder @Data 
-public class CategoryEntity {
+public class CategoryEntity extends BaseTime{
     @Id 
     @GeneratedValue ( strategy = GenerationType.IDENTITY )
     private Integer cno;
