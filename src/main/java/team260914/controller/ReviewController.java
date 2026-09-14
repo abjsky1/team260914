@@ -1,5 +1,6 @@
 package team260914.controller;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,6 +10,7 @@ import team260914.service.ReviewService;
 @RestController 
 @RequiredArgsConstructor         
 @RequestMapping ("/api/reviews")
+@CrossOrigin (value = "http://localhost:5173")
 public class ReviewController {
 
     private final ReviewService reviewService;

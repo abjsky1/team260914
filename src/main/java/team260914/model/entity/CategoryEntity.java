@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -20,13 +21,14 @@ import lombok.ToString;
 @Entity 
 @Table(name = "category")
 @NoArgsConstructor @AllArgsConstructor @Builder @Data 
-public class CategoryEntity extends BaseTime{
+public class CategoryEntity extends BaseTime {
     @Id 
     @GeneratedValue ( strategy = GenerationType.IDENTITY )
     private Integer cno;
+    @Column 
     private String name;
 
-    @OneToMany (mappedBy = "categoryEntity" , cascade = CascadeType.ALL , fetch = FetchType.LAZY )
+    @OneToMany (mappedBy = "categoryEntity" , cascade = CascadeType.ALL )
     @ToString.Exclude
     @Builder.Default
     private List<ProductEntity> productEntities = new ArrayList<>();
