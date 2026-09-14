@@ -35,7 +35,7 @@ public class ProductEntity extends BaseTime {
 
     @ManyToOne (fetch = FetchType.LAZY)
     @JoinColumn (name = "cno")
-    private CategoryEntity categortEntity;
+    private CategoryEntity categoryEntity;
 
     @OneToMany (mappedBy = "productEntity" ,cascade = CascadeType.ALL)
     @ToString.Exclude

@@ -25,5 +25,5 @@ public class ReviewEntity extends BaseTime{
 
     @ManyToOne (fetch = FetchType.LAZY)
     @JoinColumn (name = "bno")
-    private ProductEntity ProductEntity;
+    private ProductEntity productEntity;
 }
