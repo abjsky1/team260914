@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
-import team260914.controller.ProductController;
 import team260914.model.dto.ReviewDto;
 import team260914.model.entity.ProductEntity;
 import team260914.model.entity.ReviewEntity;
