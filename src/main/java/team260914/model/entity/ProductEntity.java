@@ -21,7 +21,7 @@ import lombok.ToString;
 @Entity 
 @Table (name = "product")
 @NoArgsConstructor @AllArgsConstructor @Builder @Data 
-public class ProductEntity {
+public class ProductEntity extends BaseTime {
 
     @Id 
     @GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -40,4 +40,5 @@ public class ProductEntity {
     @ToString.Exclude
     @Builder.Default
     private List<ReviewEntity> reviewEntities = new ArrayList<>();
+
 }
