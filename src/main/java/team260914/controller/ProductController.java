@@ -1,10 +1,15 @@
 package team260914.controller;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
+import team260914.model.dto.ProductUpdateDto;
 import team260914.service.ProductService;
 
 
@@ -32,14 +37,20 @@ public class ProductController {
 
 //--------------------------------------------------------------------------------------
 //  [제품 수정 기능]
-
+@PutMapping ("")
+public boolean productUpdate(@RequestBody ProductUpdateDto productUpdateDto){
+    return productService.productUpdate(productUpdateDto);
+}
 
 
 
 
 //--------------------------------------------------------------------------------------
 //  [제품 삭제 기능]
-
+@DeleteMapping ("")
+public boolean productDelete(@RequestParam(name = "bno") Integer bno){
+    return productService.productDelete(bno);
+}
 
 
 
