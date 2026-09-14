@@ -1,5 +1,6 @@
 package team260914.controller;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,6 +11,7 @@ import team260914.service.ProductService;
 @RestController 
 @RequiredArgsConstructor         
 @RequestMapping ("/api/products")
+@CrossOrigin (value = "http://localhost:5173")
 public class ProductController {
 
     private final ProductService productService;
