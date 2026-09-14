@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -28,10 +29,11 @@ public class ProductEntity extends BaseTime {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Integer bno;
 
+    @Column 
     private String name;
 
-    
-    private String price;
+    @Column 
+    private Integer price;
 
     @ManyToOne (fetch = FetchType.LAZY)
     @JoinColumn (name = "cno")
