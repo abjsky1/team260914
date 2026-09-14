@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor 
 @MappedSuperclass 
 @EntityListeners (AuditingEntityListener.class)
-public class BassTime {
+public class BaseTime {
 
 
     @CreatedDate 
