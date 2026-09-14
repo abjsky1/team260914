@@ -27,15 +27,9 @@ public class ReviewService {
         List<ReviewEntity> reviewEntities = reviewRepository.findAll();
 
         // 찾는 bno가 있으면 reviewEntity를 담을 배열 선언
-        List<ReviewDto> list = new ArrayList<>();
+        List<ReviewDto> list = reviewEntities.stream().map((reviewEntity)->{return ReviewDto.from(reviewEntity);}).toList();
         
-        // 입력받은 DTO객체에 상품테이블 pk가 있는지 비교 
-        reviewEntities.forEach((reviewEntity) ->{
-            if(reviewEntity.getProductEntity().getBno() == bno){
-                ReviewDto reviewDto = ReviewDto.from(reviewEntity);
-                list.add(reviewDto);
-            }
-        });
+
         return list;
     }
 
