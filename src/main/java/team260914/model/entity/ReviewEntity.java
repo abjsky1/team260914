@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 
 @Entity @Table (name = "review")
 @AllArgsConstructor @NoArgsConstructor @Data @Builder 
-public class ReviewEntity {
+public class ReviewEntity extends BassTime{
     @Id 
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Integer rno;
