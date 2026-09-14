@@ -11,3 +11,4 @@ public class AppStart {
         SpringApplication.run(AppStart.class);
     }
 }
+// http://localhost:8080
