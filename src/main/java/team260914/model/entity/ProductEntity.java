@@ -1,5 +1,6 @@
 package team260914.model.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -20,7 +21,7 @@ import lombok.ToString;
 
 @Entity 
 @Table (name = "product")
-@NoArgsConstructor @AllArgsConstructor @Builder @Data 
+@NoArgsConstructor @AllArgsConstructor @Data @Builder 
 public class ProductEntity extends BaseTime {
 
     @Id 
@@ -34,7 +35,7 @@ public class ProductEntity extends BaseTime {
 
     @ManyToOne (fetch = FetchType.LAZY)
     @JoinColumn (name = "cno")
-    private CategortEntity categortEntity;
+    private CategoryEntity categortEntity;
 
     @OneToMany (mappedBy = "productEntity" ,cascade = CascadeType.ALL)
     @ToString.Exclude
