@@ -27,7 +27,7 @@ public class ReviewService {
         List<ReviewEntity> reviewEntities = reviewRepository.findAll();
 
         // 찾는 bno가 있으면 reviewEntity를 담을 배열 선언
-        List<ReviewDto> list = reviewEntities.stream().filter((reviewEntity)-> reviewEntity.getProductEntity().getBno() == bno).map((reviewEntity)->{return ReviewDto.from(reviewEntity);}).toList();
+        List<ReviewDto> list = reviewEntities.stream().filter((reviewEntity)-> reviewEntity.getProductEntity().getBno() == bno).map(ReviewDto::from).toList();
         
 
         return list;
